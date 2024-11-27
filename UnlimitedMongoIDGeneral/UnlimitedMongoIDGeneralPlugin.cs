@@ -7,7 +7,7 @@ using static EFTApi.EFTHelpers;
 
 namespace UnlimitedMongoIDGeneral
 {
-    [BepInPlugin("com.kmyuhkyuk.UnlimitedMongoIDGeneral", "UnlimitedMongoIDGeneral", "1.0.0")]
+    [BepInPlugin("com.kmyuhkyuk.UnlimitedMongoIDGeneral", "UnlimitedMongoIDGeneral", "1.1.0")]
     [BepInDependency("com.kmyuhkyuk.EFTApi", "1.2.2")]
     [EFTConfigurationPluginAttributes("https://hub.sp-tarkov.com/files/file/2466-unlimited-mongoid")]
     public partial class UnlimitedMongoIDGeneralPlugin : BaseUnityPlugin
