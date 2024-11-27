@@ -1,0 +1,8 @@
+{
+	"name": "UnlimitedMongoID",
+	"author": "kmyuhkyuk",
+	"version": "1.0.0",
+	"sptVersion": "3.10.0",
+	"license": "GNU GPLv3",
+	"main": "src/UnlimitedMongoID.js"
+}
