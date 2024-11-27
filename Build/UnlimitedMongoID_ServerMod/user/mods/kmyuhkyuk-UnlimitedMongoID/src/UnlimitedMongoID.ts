@@ -7,7 +7,7 @@ import { HashUtil } from "@spt/utils/HashUtil";
 
 class UnlimitedMongoID implements IPreSptLoadMod
 {
-    private hasLoadClientMod: boolean;
+    private loadClientModRecord: Record<string, boolean> = {};
 
     public preSptLoad(container: DependencyContainer): void 
     {
@@ -30,9 +30,9 @@ class UnlimitedMongoID implements IPreSptLoadMod
             [
                 {
                     url: "/unlimited-mongoid/client",
-                    action: async (url, info) =>
+                    action: async (url, info, sessionId) =>
                     {
-                        this.hasLoadClientMod = true;
+                        this.loadClientModRecord[sessionId] = true;
 
                         return JSON.stringify({ response: "OK" });
                     }
@@ -48,13 +48,13 @@ class UnlimitedMongoID implements IPreSptLoadMod
                     url: "/client/game/start",
                     action: async (url, info, sessionId, output) =>
                     {
-                        if (this.hasLoadClientMod)
+                        if (this.loadClientModRecord[sessionId])
                         {
-                            this.hasLoadClientMod = false;
+                            this.loadClientModRecord[sessionId] = false;
                         }
                         else
                         {
-                            logger.error("Unlimited MongoID Client Mod not loaded");
+                            logger.error(`${sessionId} Unlimited MongoID Client Mod not loaded`);
                         }
 
                         return output;
