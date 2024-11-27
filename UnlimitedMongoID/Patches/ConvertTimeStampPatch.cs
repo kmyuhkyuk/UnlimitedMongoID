@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Globalization;
+using System.Linq;
 using System.Reflection;
 using EFT;
 using SPT.Reflection.Patching;
@@ -28,7 +29,8 @@ namespace UnlimitedMongoID.Patches
 
         private static bool TryGetTimeStampHashCode(string id, out uint hashCode)
         {
-            if (id.Length != 24 || !uint.TryParse(id, out _))
+            if (id.Length != 24 || !uint.TryParse(id.Substring(0, 8), NumberStyles.HexNumber,
+                    CultureInfo.InvariantCulture, out _))
             {
                 hashCode = (uint)id.GetHashCode();
 

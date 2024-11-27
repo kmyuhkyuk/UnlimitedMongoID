@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Globalization;
+using System.Linq;
 using System.Reflection;
 using EFT;
 using SPT.Reflection.Patching;
@@ -28,7 +29,8 @@ namespace UnlimitedMongoID.Patches
 
         private static bool TryGetCounterHashCode(string id, out ulong hashCode)
         {
-            if (id.Length != 24 || !ulong.TryParse(id, out _))
+            if (id.Length != 24 || !ulong.TryParse(id.Substring(8, 16), NumberStyles.HexNumber,
+                    CultureInfo.InvariantCulture, out _))
             {
                 hashCode = (ulong)id.GetHashCode();
 

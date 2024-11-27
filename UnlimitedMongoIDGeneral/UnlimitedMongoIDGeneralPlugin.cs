@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using BepInEx;
 using HarmonyLib;
 using UnlimitedMongoIDGeneral.Attributes;
@@ -35,7 +36,8 @@ namespace UnlimitedMongoIDGeneral
 
         private static bool TryGetTimeStampHashCode(string id, out uint hashCode)
         {
-            if (id.Length != 24 || !uint.TryParse(id, out _))
+            if (id.Length != 24 || !uint.TryParse(id.Substring(0, 8), NumberStyles.HexNumber,
+                    CultureInfo.InvariantCulture, out _))
             {
                 hashCode = (uint)id.GetHashCode();
 
@@ -49,7 +51,8 @@ namespace UnlimitedMongoIDGeneral
 
         private static bool TryGetCounterHashCode(string id, out ulong hashCode)
         {
-            if (id.Length != 24 || !ulong.TryParse(id, out _))
+            if (id.Length != 24 || !ulong.TryParse(id.Substring(8, 16), NumberStyles.HexNumber,
+                    CultureInfo.InvariantCulture, out _))
             {
                 hashCode = (ulong)id.GetHashCode();
 
