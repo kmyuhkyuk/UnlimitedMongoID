@@ -14,7 +14,7 @@ namespace Build
         {
             var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             var arg = args.ElementAtOrDefault(0);
-            //var sha = Copy.GetTipSha(args.ElementAtOrDefault(1));
+            var sha = Copy.GetTipSha(args.ElementAtOrDefault(1));
 
             const string gamePath = @"R:\Battlestate Games\Client.0.15.5.1.33420";
 
@@ -33,7 +33,7 @@ namespace Build
                 Copy.CopyAssembly(arg, "Release", baseDirectory, modPath, new[]
                 {
                     "UnlimitedMongoID"
-                } /*, sha*/);
+                }, sha);
 
                 Copy.GenerateSevenZip(arg, "Release", modPath, releaseName, @"BepInEx\plugins", Array.Empty<string>(),
                     Array.Empty<string>(), Array.Empty<string>(),
