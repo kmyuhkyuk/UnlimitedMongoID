@@ -10,7 +10,7 @@ namespace UnlimitedMongoIDGeneral
 {
     [BepInPlugin("com.kmyuhkyuk.UnlimitedMongoIDGeneral", "UnlimitedMongoIDGeneral", "1.1.1")]
     [BepInDependency("com.kmyuhkyuk.EFTApi", "1.2.2")]
-    [EFTConfigurationPluginAttributes("https://hub.sp-tarkov.com/files/file/2466-unlimited-mongoid")]
+    [EFTConfigurationPluginAttributes("https://github.com/kmyuhkyuk/UnlimitedMongoID")]
     public partial class UnlimitedMongoIDGeneralPlugin : BaseUnityPlugin
     {
         private void Start()

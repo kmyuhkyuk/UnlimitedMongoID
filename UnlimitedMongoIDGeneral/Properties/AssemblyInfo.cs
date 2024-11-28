@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("UnlimitedMongoIDGeneral")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("https://hub.sp-tarkov.com/files/file/2466-unlimited-mongoid")]
+[assembly: AssemblyCompany("https://github.com/kmyuhkyuk/UnlimitedMongoID")]
 [assembly: AssemblyProduct("UnlimitedMongoIDGeneral")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
