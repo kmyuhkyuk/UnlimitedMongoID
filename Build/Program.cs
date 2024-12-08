@@ -20,7 +20,7 @@ namespace Build
 
             var modPath = $@"{gamePath}\BepInEx\plugins\kmyuhkyuk-UnlimitedMongoID";
 
-            const string versionName = "1.1.1";
+            const string versionName = "1.1.2";
 
             var releaseName = $"{new DirectoryInfo(modPath).Name}(Release_{versionName}).7z";
 
