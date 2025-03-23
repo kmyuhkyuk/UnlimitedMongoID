@@ -5,7 +5,7 @@ using UnlimitedMongoID.Patches;
 
 namespace UnlimitedMongoID
 {
-    [BepInPlugin("com.kmyuhkyuk.UnlimitedMongoID", "UnlimitedMongoID", "1.1.2")]
+    [BepInPlugin("com.kmyuhkyuk.UnlimitedMongoID", "UnlimitedMongoID", "1.1.3")]
     [EFTConfigurationPluginAttributes("https://github.com/kmyuhkyuk/UnlimitedMongoID")]
     public class UnlimitedMongoIDPlugin : BaseUnityPlugin
     {
