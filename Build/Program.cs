@@ -16,11 +16,11 @@ namespace Build
             var arg = args.ElementAtOrDefault(0);
             var sha = Copy.GetTipSha(args.ElementAtOrDefault(1));
 
-            const string gamePath = @"R:\Battlestate Games\Client.0.15.5.1.33420";
+            const string gamePath = @"R:\Battlestate Games\Client.0.16.1.3.35392";
 
             var modPath = $@"{gamePath}\BepInEx\plugins\kmyuhkyuk-UnlimitedMongoID";
 
-            const string versionName = "1.1.2";
+            const string versionName = "1.1.3";
 
             var releaseName = $"{new DirectoryInfo(modPath).Name}(Release_{versionName}).7z";
 
